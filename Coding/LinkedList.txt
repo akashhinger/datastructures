@@ -1,0 +1,121 @@
+public class Main {
+	public static void main( String args[] ) {
+    SinglyLinkedList<Integer> sl1=new SinglyLinkedList<Integer>();
+
+    for (int i=1;i<10;i++){
+        sl1.insertAtEnd(i);
+    }
+    int j=22;
+    int k=7;
+    sl1.insertAfter(j,k);
+    sl1.reverse(sl1);
+    sl1.printlist();
+    System.out.println("  Middle is  : " + sl1.findmid(sl1));
+}
+}
+
+
+//Implementation
+
+public class SinglyLinkedList <T>{
+    public Node headnode;
+    public int size;
+
+    public SinglyLinkedList(){
+        headnode = null;
+        size = 0;
+    }
+
+    public class Node{
+        public T data;
+        public Node nextnode;
+    }
+
+    public void insertAtHead(T data){
+        Node newnode=new Node();
+        newnode.data = data;
+        newnode.nextnode=headnode;
+        headnode=newnode;
+        size++;
+    }
+    
+    public void insertAtEnd(T data){
+    	if(isEmpty()) {
+    		insertAtHead(data);
+    		return;
+    	}
+        Node newnode=new Node();
+        newnode.data = data;
+        newnode.nextnode=null;
+        Node last=headnode;
+        while(last.nextnode!=null) {
+        	last=last.nextnode;
+        }
+        last.nextnode=newnode;
+        size++;
+    }
+    public void insertAfter(T data, T prev) {
+    	Node newnode= new Node();
+    	newnode.data=data;
+    	Node trvnode= headnode;
+    	while(trvnode!=null && trvnode.data!=prev) {
+    		trvnode= trvnode.nextnode;
+    	}
+    	newnode.nextnode=trvnode.nextnode;
+    	trvnode.nextnode=newnode;
+    	size++;
+    }
+
+    public boolean isEmpty(){
+        if (headnode==null) return true;
+        return false;
+    }
+    public void printlist(){
+        Node temp;
+        temp = headnode;
+        if(isEmpty()) {
+            System.out.println("List is empty");
+            return;
+        }
+        while (temp!=null){
+            System.out.print(temp.data+"->");
+            temp= temp.nextnode;
+        }
+        System.out.print("null");
+    }
+    public void deletehead() {
+    	headnode= headnode.nextnode;
+    	size--;
+    }
+    public void deleteValue(T data) {
+    	Node curr= headnode;
+    	Node prev=null;
+    	while(curr!=null) {
+    		if(curr.data==data) {
+    			prev.nextnode=curr.nextnode;
+    		}
+    		prev=curr;
+    		curr= curr.nextnode;
+    	}
+    }
+    public void reverse(SinglyLinkedList list) {
+    	Node curr,prev=null,next=null;
+    	curr = list.headnode;
+    	while(curr!=null) {
+    		next = curr.nextnode;
+    		curr.nextnode=prev;
+    		prev=curr;
+    		curr=next;
+    	}
+    	list.headnode=prev;
+    }
+    public T findmid(SinglyLinkedList list) {
+    	Node slow=list.headnode,fast=list.headnode;
+    	while(slow!=null && fast!=null && fast.nextnode!=null) {
+    		slow = slow.nextnode;
+    		fast =fast.nextnode.nextnode;
+    	}
+    	return slow.data;
+    }
+}
+
