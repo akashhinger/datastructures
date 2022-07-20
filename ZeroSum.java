@@ -32,7 +32,6 @@ public class ZeroSum {
 		// TODO Auto-generated method stub
 		int arr[] = {0, -1, 2, -3, 1};
 		Arrays.sort(arr);
-		List<Integer> list = new ArrayList<>();
 		for(int i =0;i<arr.length-1;i++) {
 			int l=i+1;
 			int r =arr.length-1;
