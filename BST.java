@@ -73,5 +73,19 @@ public class BST {
 		}
 		return min;
 	}
+	void height() {
+		
+		System.out.println("height: "+heightrec(root));
+		
+	}
+	private int heightrec(BST.Node root) {
+		// TODO Auto-generated method stub
+		if(root==null)
+			return 1;
+		int lheight=heightrec(root.left);
+		int rheight=heightrec(root.right);
+		
+		return Math.max(lheight, rheight)+1;
+	}
 	
 }

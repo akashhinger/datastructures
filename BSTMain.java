@@ -12,5 +12,6 @@ public class BSTMain {
 		bst.deletekey(5);
 
 		bst.inorder();
+		bst.height();
 	}
 }
