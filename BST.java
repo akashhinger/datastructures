@@ -14,9 +14,6 @@ public class BST {
 	{
 		root = null;
 	}
-	BST(int key){
-		root = new Node(key);
-	}
 	void insert(int key) {
 		root = insertrec(root,key);
 	}
@@ -38,7 +35,7 @@ public class BST {
 		// TODO Auto-generated method stub
 		if (root!=null) {
 			inorderrec(root.left);
-			System.out.print(root.data);
+			System.out.println(root.data);
 			inorderrec(root.right);
 		}
 	}
@@ -86,6 +83,21 @@ public class BST {
 		int rheight=heightrec(root.right);
 		
 		return Math.max(lheight, rheight)+1;
+	}
+	public void count() {
+		System.out.println("Number of nodes: " + countrec(root));
+	}
+	private int countrec(BST.Node root) {
+		// TODO Auto-generated method stub
+		int x=0,y=0;
+		if(root!=null) {
+			x=countrec(root.left);
+			y=countrec(root.right);
+			if(root.left==null&&root.right==null)
+			return x+y+1;
+			else return x+y;
+		}
+		return 0;
 	}
 	
 }

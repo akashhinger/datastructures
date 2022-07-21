@@ -35,7 +35,7 @@ public class FlatMap {
 		list.add(List.of(1,2,3));
 		list.add(List.of(1,2,3));
 		System.out.println(list);
-		System.out.print(list.stream().flatMap(num->num.stream()).filter(s->s.equals(1)).collect(Collectors.toList()));
+		System.out.print(list.stream().flatMap(num->num.stream()).collect(Collectors.toList()));
 	}
 
 }

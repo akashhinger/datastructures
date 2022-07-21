@@ -13,5 +13,6 @@ public class BSTMain {
 
 		bst.inorder();
 		bst.height();
+		bst.count();
 	}
 }
