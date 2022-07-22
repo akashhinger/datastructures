@@ -29,7 +29,6 @@ public class StringReverseSpecial {
 		String str="ak@#as@#h";
 		int n =str.length();
 		int left=0,right=n-1;
-		String str2="";
 		char[] ch1=str.toCharArray();
 		while(left<right&&right>0) {
 			if(Character.isLetter(ch1[left])&&Character.isLetter(ch1[right])) {

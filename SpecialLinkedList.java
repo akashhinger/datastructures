@@ -89,14 +89,6 @@ public class SpecialLinkedList {
 		}
 		list.makeSpecial();
 		list.printList();
-		SpecialLinkedList cloned = new SpecialLinkedList();
-		cloned = list.makeClone();
-		cloned.printList();
-	}
-	private SpecialLinkedList makeClone() {
-		// TODO Auto-generated method stub
-		
-		return null;
 	}
 	
 }

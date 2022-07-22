@@ -18,6 +18,8 @@ int count = employeeList.stream().collect(Collectors.summingInt(emp->emp.getSala
 System.out.println(count);
 Optional<Employee> min=employeeList.stream().collect(Collectors.minBy(Comparator.comparing(emp->emp.getSalary())));
 System.out.println(min.get().getName());
+int sum = employeeList.stream().mapToInt(emp->emp.getSalary()).sum();
+System.out.println(sum);
 }
 }
 class Employee {
