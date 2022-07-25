@@ -39,9 +39,9 @@ public class PrintCombination {
 
 	private static void combination(String str, String str2) {
 		// TODO Auto-generated method stub
-		count++;
+		
 		if(str.length()==0) {
-			System.out.println(str2+" ");
+			System.out.println(str2 +" "+ ++count);
 			return;
 		}
 		for(int i=0;i<str.length();i++) {
