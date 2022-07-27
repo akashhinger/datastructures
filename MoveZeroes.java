@@ -34,7 +34,6 @@ public class MoveZeroes {
 
 	private static void moveZeroes(int[] arr) {
 		// TODO Auto-generated method stub
-		int[] b = new int[arr.length];
 		int j =0;
 		for(int i =0;i<arr.length;i++) {
 			if(arr[i]!=0) {
