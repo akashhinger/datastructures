@@ -32,7 +32,9 @@ public class MajorityElement {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
  int[] nums = new int[] {2,2,1,1,1,2,2};
+ int[] nums2 = new int[] {3,2,1,1};
  System.out.println(majorityElement(nums));
+ System.out.println(containsDuplicate(nums2));
 	}
 	public static int majorityElement(int[] nums) {
         HashMap<Integer,Integer> map=new HashMap<>();
@@ -52,6 +54,15 @@ public class MajorityElement {
                 max=x.getValue();
         }
         return max;
+    }
+	public static boolean containsDuplicate(int[] nums) {
+        Set<Integer> set=new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+            set.add(nums[i]);
+        }
+        System.out.println(set.size());
+        System.out.println(nums.length);
+        return set.size()==nums.length;
     }
 
 }
