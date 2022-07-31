@@ -26,7 +26,7 @@ public class Palindrome {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str="aa";
+		String str="A man, a plan, a canal: Panama";
 		String str1=str.toLowerCase();
 		System.out.println(isPalindrome(str1));
 	}
@@ -34,6 +34,8 @@ public class Palindrome {
         int i=0;
         int k =0;
         int j=s.length()-1;
+        if(s.length()==1)
+        	return true;
         while(i<j){
         	System.out.println(s.charAt(i));
         	System.out.println(s.charAt(j));
@@ -56,7 +58,8 @@ public class Palindrome {
             }        
         }
         System.out.println(i+" "+j+" "+k);
-        if(--i==++j)
+        
+        if(i==j||i>j)
             return true;
         return false;
     }
