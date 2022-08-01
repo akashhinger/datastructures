@@ -7,10 +7,13 @@ public class Main {
     }
     int j=7;
     int k=7;
-    sl1.insertAfter(j,k);
+    //sl1.insertAfter(j,k);
     //sl1.reverse(sl1);
     sl1.printlist();
     System.out.println("  Middle is  : " + sl1.findmid(sl1));
     sl1.removeDuplicates(sl1);
+    sl1.removeNthFromEnd(3);
+    System.out.println("  Remove nth node from end  : ");
+    sl1.printlist();
 }
 }

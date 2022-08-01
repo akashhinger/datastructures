@@ -110,5 +110,29 @@ public class SinglyLinkedList <T>{
     	}
     	System.out.println("After removing: "+ set);
     }
+    public void removeNthFromEnd( int n) {
+        Node prev = headnode;
+        Node curr = headnode;
+        int size=0;
+ 
+        while(curr!=null) {
+            size++;
+            curr = curr.nextnode;
+        }
+        System.out.println(size);
+        if(size==1)
+            return;
+        n=size-n+1;
+        int i=1;
+        curr=headnode;
+        while (curr!= null&&i<n) {
+            prev=curr;
+            curr=curr.nextnode;
+            i++;
+        }
+        System.out.println(curr.data);
+        System.out.println(prev.data);
+        prev.nextnode=curr.nextnode;
+    }
 }
 
